@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love You Bbu ❤️</title>
+    <style>
+        body {
+            background-color: pink;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+        .heart {
+            font-size: 50px;
+            color: red;
+            font-weight: bold;
+            margin-top: 100px;
+        }
+        @keyframes fall {
+            0% { transform: translateY(-100px) rotate(0deg); }
+            100% { transform: translateY(100vh) rotate(360deg); }
+        }
+        .flower {
+            position: absolute;
+            top: -50px;
+            font-size: 30px;
+            animation: fall linear infinite;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="heart">❤️ Love You Bbu ❤️</h1>
+    
+    <audio autoplay loop>
+        <source src="https://www.mfiles.co.uk/mp3-downloads/romance.mp3" type="audio/mp3">
+    </audio>
+
+    <script>
+        function createFlower() {
+            let flower = document.createElement("div");
+            flower.innerHTML = "🌸";
+            flower.classList.add("flower");
+            flower.style.left = Math.random() * 100 + "vw";
+            flower.style.animationDuration = Math.random() * 3 + 2 + "s";
+            document.body.appendChild(flower);
+
+            setTimeout(() => { flower.remove(); }, 5000);
+        }
+
+        setInterval(createFlower, 300);
+    </script>
+
+</body>
+</html>
